@@ -13,7 +13,6 @@ while True:
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
-    cv2.imshow("Face Detection - Press 'q' to quit", frame)
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.putText(frame, f'Faces Detected: {len(faces)}', (10, 30), font, 1, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow("Face Detection with Count - Press 'q' to quit", frame)
