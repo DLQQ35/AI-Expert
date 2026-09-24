@@ -39,11 +39,11 @@ while cap.isOpened():
             handedness = handedness.classification[0].label
             mp_drawing.draw_landmarks(img, hands, mp_hands.HAND_CONNECTIONS)
             gesture = detect_gesture(hand_landmarks, handedness)
-                if gesture == "Scroll_up":pyautogui.scroll(SCROLL_SPEED)
-                    pyautogui.scroll(SCROLL_SPEED)
-                    last_scroll = c_time
-                elif gesture == 'Scroll_down' and c_time - last_scroll > SCROLL_DELAY:
-                    pyautogui.scroll(-SCROLL_SPEED)
+            if gesture == "Scroll_up":pyautogui.scroll(SCROLL_SPEED)
+                pyautogui.scroll(SCROLL_SPEED)
+                last_scroll = c_time
+            elif gesture == 'Scroll_down' and c_time - last_scroll > SCROLL_DELAY:
+                pyautogui.scroll(-SCROLL_SPEED)
                 last_scroll = c_time
 
     c_time = time.time()
